@@ -12,5 +12,16 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  let newArray = [];
+  tutorials.map(function(tut) {
+    var words = tut.split(' ');
+    console.log(words);
+    for (let i = 0; i < words.length; i++) {
+      words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1);
+    }
+    tut = words.join(' ');
+    newArray.push(tut);
+  });
+  return newArray;
 }
+titleCased();
